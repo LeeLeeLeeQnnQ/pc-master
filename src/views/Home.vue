@@ -1,16 +1,13 @@
 <template>
   <div id="box">
-	<header-nav/>
-    <router-view/>
+    我是首页
   </div>
 </template>
 
 <script>
-import HeaderNav from '@/components/HeaderNav.vue'
 export default {
   name: 'home',
   components: {
-    HeaderNav
   },
   methods: {
     /**

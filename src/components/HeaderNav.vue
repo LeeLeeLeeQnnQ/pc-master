@@ -1,16 +1,19 @@
 <template>
 	<div class="header-box">
 		<div>
-			
+			logo部分
 		</div>
 		<!-- nav部分 -->
 		<ul>
-		  <li v-for="(item,index) in links" @click="changePath(index)" :key="index" :class="{ active:index==current}">
-			<router-link :to="{ path: item.path }">
+		  <li v-for="(item,index) in links" @click="changePath(index,item.path)" :key="index" :class="{ active:index==current}">
+			<span>
 			    {{item.name}}
-			</router-link>
+			</span>
 		  </li>
 		</ul>
+		<div>
+			搜索部分
+		</div>
 	</div>
 </template>
 
@@ -30,11 +33,11 @@
 				},
 				{
 					name: '企业增资',
-					path: '/home',
+					path: '/about',
 				},
 				{
 					name: '产权转让',
-					path: '/home',
+					path: '/login',
 				},
 				{
 					name: '资产转让',
@@ -64,16 +67,21 @@
 		  }
 		},
 		methods: {
-			changePath: function (index) {
+			changePath: function (index,path) {
 				this.current = index;
+				this.$router.push({path:path});
 			},
 		}
 	}
 </script>
 
 <style scoped lang="less">
+	.header-box{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
 	ul{
-		width: 100%;
 		li{
 			float: left;
 			width: 80px;
@@ -82,16 +90,17 @@
 			text-align: center;
 			margin-left: 1px;
 			cursor: pointer;
+			color:#000; 
+			span {
+				
+			    text-decoration: none;
+			}
 		}
 		li:hover,.active{
 			background-color: royalblue;
-			color: #fff;
-			.router-link-active{
+			span{
 			    color: #fff;
 			}
-		}
-		.router-link-active{
-		    color: #000;
 		}
 	}
 </style>
