@@ -1,37 +1,33 @@
 <template>
 	<div class="basic-box">
-		<div class="header">
-			<header-nav/>
-		</div>
+		
 <!-- 		<transition name="fade">
 			<router-view/>
 		</transition> -->
 		
 		<div class="content">
+		<div class="header">
+			<header-box/>
+		</div>
 			<router-view/>
 		</div>
 		<div class="footer">
-			我是底部
+			<footer-box/>
 		</div>
 	</div>
 </template>
 
 <script>
-import HeaderNav from '@/components/HeaderNav.vue'
+import HeaderBox from '@/components/HeaderBox.vue'
+import FooterBox from '@/components/FooterBox.vue'
 export default {
   components: {
-    HeaderNav
+    HeaderBox,
+	FooterBox
   },
   methods: {
-    /**
-     * [loadData axios示例]
-     * @return
-     */
     loadData () {
-      login({
-        uid: 1233
-      })
-        .then(res => { if (res.code === 200) { } }).catch(err => { if (err) { } })
+      
     }
   }
 }

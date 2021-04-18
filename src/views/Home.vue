@@ -1,13 +1,16 @@
 <template>
   <div id="box">
+	  <Banner/>
     我是首页
   </div>
 </template>
 
 <script>
+	import Banner from '@/components/Banner.vue'
 export default {
   name: 'home',
   components: {
+	  Banner
   },
   methods: {
     /**

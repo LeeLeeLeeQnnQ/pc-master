@@ -3,6 +3,12 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+
+import 'ant-design-vue/dist/antd.css';
+import { Carousel , Icon } from 'ant-design-vue';
+Vue.use(Carousel);
+Vue.use(Icon);
+
 // base样式
 import '@/assets/less/base.less'
 
